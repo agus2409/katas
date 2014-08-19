@@ -1,0 +1,2 @@
+cmdhistory=["(filter-odd [2 3 4 5 6 7 8])" "(filter-odd [3 4 5 6 7 8 9])" "\#<Namespace code-katas-1.core>" "(run-tests)" "(require 'code-katas-1.core-test)" "(in-ns 'code-katas-1.core-test)" "(run-tests)" "(implement-range 2 5)" "(filter-odd (3 4 5 6 7))" "(filter-odd [4 2 1 6])" "(filter-odd \#(3 4 5 6 7))" "(filter-odd \#{1 2 3 4 5})" "(run-tests)"]
+eclipse.preferences.version=1

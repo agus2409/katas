@@ -14,9 +14,9 @@
   (is (false? (kata/nil-key :c {:a nil :b 2}))))
 
 (deftest implement-range
-  (is (= (kata/range 5 8) '(5 6 7)))
-  (is (= (kata/range -2 2) '(-2 -1 0 1)))
-  (is (= (kata/range 1 4) '(1 2 3))))
+  (is (= (kata/implement-range 5 8) '(5 6 7)))
+  (is (= (kata/implement-range -2 2) '(-2 -1 0 1)))
+  (is (= (kata/implement-range 1 4) '(1 2 3))))
 
 (deftest compress-sequence
   (is (= (apply str (kata/compress-sequence "Leeeeeerrroyyy")) "Leroy"))
