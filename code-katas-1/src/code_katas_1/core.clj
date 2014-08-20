@@ -65,7 +65,7 @@
   "Escribir una funcion que reciba un string y devuelva un nuevo string conteniendo
    solamente las mayusculas."
   [text]
-  (filter #(Character/isUpperCase %) text)
+  (apply str (filter #(Character/isUpperCase %) text))
   )
 
 (defn find-truth
