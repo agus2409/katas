@@ -34,7 +34,6 @@
  (dotimes [n (count s)]  
    (if (not=  (first lista) (get s n)) (def lista (conj lista (get s n))))
  )
- (println lista)
  (reverse lista)
 )
 
@@ -58,8 +57,16 @@
    luego el segundo de cada una, luego el tercero, etc.
    Restricciones: interleave"
   [s1 s2]
-  
-  )
+  (def lista '())
+  (def aux1 s1)
+  (def aux2 s2)
+   (dotimes [n (min (count s1) (count s2))]  
+     (def lista (conj lista (first aux1) (first aux2)))
+     (def aux1 (drop 1 aux1))
+     (def aux2 (drop 1 aux2))
+   )
+  (reverse lista)
+ )
 
 (defn retrieve-caps
   "Escribir una funcion que reciba un string y devuelva un nuevo string conteniendo
@@ -81,6 +88,13 @@
    construya un mapa a partir de ellos.
    Restricciones: zipmap"
   [k v]
-  )
-
-(retrieve-caps "HoLa")
+  (def mapa {})
+  (def aux1 k)
+  (def aux2 v)
+   (dotimes [n (min (count k) (count v))]  
+     (def mapa (assoc mapa (first aux1) (first aux2)))
+     (def aux1 (drop 1 aux1))
+     (def aux2 (drop 1 aux2))
+   )
+   mapa
+ )
