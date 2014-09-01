@@ -1,0 +1,2 @@
+cmdhistory=["(contains? [1 2 3 4 5] 5)" "(not-any? false? (true true true))" " (not-any? false? '(true true true))" "(run-tests)"]
+eclipse.preferences.version=1
