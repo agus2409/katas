@@ -4,7 +4,14 @@
 (defn unpartial
   "Escribir una funcion que acepte una funcion parcial con cantidad de argumentos desconocida,
    retornar una funcion equivalente de n argumentos"
-  [f] 
+  [f]
+;  def b(toto 10)
+;  fb 15
+;  fn? preguntar si es una funcion, si es devolver recursivo, sino devolver resultado
+;  (fn [&arg]
+;   (let[res(f (first args))])
+;     (if (fn? res)
+;        (recur res(rest args))
 )
 
 
@@ -15,14 +22,14 @@
  ;dentro de una lazy-seq tomo el primero de una de las secuencias si esta en las restantes listas lo dejo sino lo tiro
  ;mando recursivo con las nuevas listas
  (defn remover [sequ]
-   (map #(if (= (first %) (first (sort (map first seqs)))) (drop 1 %) %) sequ))
+   (map #(if (= (first %) (first (sort (map first sequ)))) (drop 1 %) %) sequ))
  
  
  (if (not-any? false? (map #(=(first %) (first (sort (map first seqs)))) seqs))
    (first (sort (map first seqs)))
    (recur (remover seqs))
-  )
  )
+)
    
 
 (defn intercalar
@@ -30,6 +37,7 @@
    retorne una nueva coleccion donde el valor es insertado intercalado cada dos argumentos
    que cumplan el predicado"
   [predicado valor secuencia]
+  ;para cada par de elementos donde se cumple el predicado meter el predicado en el medio
   )
 
 
@@ -40,8 +48,5 @@
    La funcion debe aceptar una secuencia inicial de numeros, y devolver una secuencia infinita de compresiones, donde
    cada nuevo elemento es el elemento anterior comprimido."
   [secuencia]
+  ;(iterate funcion secuencia)
 )
-
-
-
-(search [1 2 3 4 5 6 7 8 9] [0.5 3/2 7 19])
