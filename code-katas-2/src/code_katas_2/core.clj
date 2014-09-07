@@ -11,20 +11,13 @@
     (if (fn?(f(first (first args))))
       ((unpartial (f(first (first args)))) (rest (first args)))
       (f(first (first args)))
-   )
+    )
     (if (fn?(f(first args)))
       ((unpartial (f(first args))) (rest args))
-   )
     )
+   )
  )
  )
-;  def b(toto 10)
-;  fb 15
-;  fn? preguntar si es una funcion, si es devolver recursivo, sino devolver resultado
-;  (fn [&arg]
-;   (let[res(f (first args))])
-;     (if (fn? res)
-;        (recur res(rest args))
 
 
 (defn search
@@ -49,9 +42,16 @@
    retorne una nueva coleccion donde el valor es insertado intercalado cada dos argumentos
    que cumplan el predicado"
   [predicado valor secuencia]
-  ;para cada par de elementos donde se cumple el predicado meter el predicado en el medio
-  )
-
+  
+  (lazy-seq
+    (if (not (empty? secuencia))
+    (if (and (not (nil? (second secuencia))) (predicado (first secuencia) (second secuencia)))             
+      (conj (first secuencia) valor (intercalar predicado valor (rest secuencia)))
+      (conj (first secuencia) (intercalar predicado valor (rest secuencia)))
+    )
+    )
+    )
+)
 
 (defn tartamudeo
   "Escriba una funcion que retorne una secuencia lazy que comprima el tartamudeo de una secuencia de numeros.
@@ -60,13 +60,7 @@
    La funcion debe aceptar una secuencia inicial de numeros, y devolver una secuencia infinita de compresiones, donde
    cada nuevo elemento es el elemento anterior comprimido."
   [secuencia]
-  ;(iterate funcion secuencia)
+;(iterate funcion secuencia)
 )
-
-
-
-((unpartial (fn [a]
-              (fn [b]              
-                (fn [c]
-                  (fn [d]
-                    (+ a b c d)))))) 10 5 3 2)
+;(intercalar < :menor [2 6 9 4 3])
+(conj :menor :mayor)
