@@ -46,8 +46,8 @@
   (lazy-seq
     (if (not (empty? secuencia))
     (if (and (not (nil? (second secuencia))) (predicado (first secuencia) (second secuencia)))             
-      (conj (first secuencia) valor (intercalar predicado valor (rest secuencia)))
-      (conj (first secuencia) (intercalar predicado valor (rest secuencia)))
+      (conj [(first secuencia)] valor (intercalar predicado valor (rest secuencia)))
+      (conj [(first secuencia)] (intercalar predicado valor (rest secuencia)))
     )
     )
     )
@@ -62,5 +62,5 @@
   [secuencia]
 ;(iterate funcion secuencia)
 )
-;(intercalar < :menor [2 6 9 4 3])
-(conj :menor :mayor)
+(intercalar < :menor [2 6 9 4 3])
+;(conj '() :menor (2 6 4 3))
